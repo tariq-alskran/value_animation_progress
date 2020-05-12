@@ -26,32 +26,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-
   /// range is from 1 to 100
-  double value = 200;
+  double value = 90.0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.blue,
       ),
       body: Center(
           child: ValueAnimationProgress(
         value: value,
         textSize: 30,
-
         duration: Duration(seconds: 3),
         textColor: Colors.white,
         cardHeight: 170,
         cardWidth: 170,
         progressRadius: 120,
         progressStrokeWidth: 20,
-        textBackGroundColor: Colors.black,
-        gradientCircularProgressColorOne:  Color.fromRGBO(255, 165, 0, 1),
-        gradientCircularProgressColorTwo: Color.fromRGBO(204, 0, 0, 1),
+        textBackGroundColor: Colors.blue,
+        gradientCircularProgressColorOne: Color.fromRGBO(58, 255, 51, 1),
+        gradientCircularProgressColorTwo: Color.fromRGBO(255, 85, 51, 1),
+        gradientCircularProgressColorThree: Color.fromRGBO(255, 85, 51, 1),
       )),
     );
   }

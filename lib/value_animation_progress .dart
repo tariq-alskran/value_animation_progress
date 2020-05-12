@@ -3,13 +3,13 @@ import 'package:gradient_progress/gradient_progress.dart';
 import 'dart:math' as math;
 
 class ValueAnimationProgress extends StatefulWidget {
-
   /// range is from 1 to 100
   double value;
 
   Color gradientCircularProgressColorOne;
 
   Color gradientCircularProgressColorTwo;
+  Color gradientCircularProgressColorThree;
 
   Duration duration = Duration(seconds: 3);
 
@@ -31,6 +31,7 @@ class ValueAnimationProgress extends StatefulWidget {
       {@required this.value,
       @required this.gradientCircularProgressColorOne,
       @required this.gradientCircularProgressColorTwo,
+      @required this.gradientCircularProgressColorThree,
       @required this.duration,
       @required this.textSize,
       @required this.textColor,
@@ -80,6 +81,7 @@ class _ValueAnimationProgressState extends State<ValueAnimationProgress>
             gradientColors: [
               widget.gradientCircularProgressColorOne,
               widget.gradientCircularProgressColorTwo,
+              widget.gradientCircularProgressColorThree,
             ],
             radius: widget.progressRadius,
             strokeWidth: widget.progressStrokeWidth,
@@ -106,11 +108,13 @@ class _ValueAnimationProgressState extends State<ValueAnimationProgress>
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(100.0),
               ),
-              elevation: 15,
+              elevation: 20,
               color: widget.textBackGroundColor,
               child: Center(
                 child: Text(
-                  !startAnimation ? "Start" : '${widget.value}%',
+                  !startAnimation
+                      ? "Start"
+                      : '${widget.value > 100 ? 100 : widget.value}%',
                   style: TextStyle(
                       fontSize: widget.textSize, color: widget.textColor),
                 ),
