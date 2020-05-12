@@ -1,7 +1,6 @@
 name: value_animation_progress
 description: Used to display numerical value by circle animation progress
 version: 1.0.0+1
-author: Tariq Alskran<tariq.alskran@email.com>
 homepage: https://github.com/tariq-alskran/value_animation_progress.git
 environment:
   sdk: ">=2.1.0 <3.0.0"
